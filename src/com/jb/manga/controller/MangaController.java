@@ -20,7 +20,7 @@ import javax.swing.JLabel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jb.manga.entity.Pages;
-import com.jb.manga.entity.UsersChapter;
+import com.jb.manga.entity.MangaChapter;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -83,12 +83,12 @@ public class MangaController extends HttpServlet {
 			// System.out.println(gson.toJson(response.getBody()));
 			String json = "[" + manga.getBody() + "]";
 
-			Type collectionType = new TypeToken<ArrayList<UsersChapter>>() {
+			Type collectionType = new TypeToken<ArrayList<MangaChapter>>() {
 			}.getType();
-			List<UsersChapter> getPageChapter = gson.fromJson(json,
+			List<MangaChapter> getPageChapter = gson.fromJson(json,
 					collectionType);
 
-			for (UsersChapter u : getPageChapter) {
+			for (MangaChapter u : getPageChapter) {
 				System.out.print(u.getHref());
 				System.out.println(" " + u.getName() + " " + u.getLastUpdate());
 				for (Pages p : u.getPages()) {

@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.jb.manga.entity.UserList;
-import com.jb.manga.entity.UsersChapter;
+import com.jb.manga.entity.MangaList;
+import com.jb.manga.entity.MangaChapter;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -53,8 +53,8 @@ public class MangaListController extends HttpServlet {
 			System.out.println(mangaList.getBody());
 			String json = mangaList.getBody();
 			
-			Type collectionType = new TypeToken<ArrayList<UserList>>() {}.getType();
-			List<UserList> titles = gson.fromJson(json, collectionType);
+			Type collectionType = new TypeToken<ArrayList<MangaList>>() {}.getType();
+			List<MangaList> titles = gson.fromJson(json, collectionType);
 			
 			request.setAttribute("titles", titles);
 			

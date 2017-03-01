@@ -2,7 +2,7 @@ package com.jb.manga.entity;
 
 import java.io.Serializable;
 
-public class UserList implements Serializable{
+public class MangaList implements Serializable{
 	private String mangaId;
 	private String name;
 	public String getMangaId() {
@@ -18,4 +18,16 @@ public class UserList implements Serializable{
 		this.name = name;
 	}
 	
+}
+
+class Author implements Serializable{
+	private String author;
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}	
 }

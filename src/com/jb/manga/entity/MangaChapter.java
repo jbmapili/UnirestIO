@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class UsersChapter implements Serializable{
+public class MangaChapter implements Serializable{
 
 	/**
 	 * 
